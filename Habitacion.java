@@ -12,6 +12,13 @@ import java.util.*;
 import java.time.*;
 import java.time.format.*;
 
+/**
+ * Clase habitacion
+ * Contiene un ArrayList de habitaciones, simulando una base de datos de habitaciones
+ * El objeto habitacion será con el que se asocie un cliente cuando se haga una reservación
+ * Cada habitacion contiene una agenda 'treeMap' en la que se llevara el registro de fechas ocupadas o disponibles
+ * 
+ */
 public class Habitacion {
 
     static ArrayList <Habitacion> BD_habitaciones = new ArrayList<>(10);
@@ -23,7 +30,7 @@ public class Habitacion {
 
     TreeMap <LocalDate, Cliente> agenda;
 
-    public Habitacion(final int noHabitacion, final int precio, final int cupo, final String detalles) {
+    public Habitacion( int noHabitacion,  int precio,  int cupo,  String detalles) {
         this.noHabitacion = noHabitacion;
         this.precio = precio;
         this.cupo = cupo;
@@ -31,7 +38,7 @@ public class Habitacion {
         agenda = new TreeMap<>();
     }
     
-     /*
+    /*
     *Getters y Setters
     */
 
@@ -208,8 +215,8 @@ public class Habitacion {
    
    /** 
     * Recorre la base de datos habitaciones 
-    * Imprimee aquellas habitaciones con cierto cupo en especifico
-    * Y que no esten ocupadas en cierta fecha
+    * Imprime aquellas habitaciones con el cupo ingresado
+    * Y que no esten ocupadas en cierta fecha ingresada
     * @param fecha
     * @param noHuespedes
     */
