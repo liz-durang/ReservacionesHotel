@@ -1,0 +1,47 @@
+
+/**
+ * Proyecto 1: Colecciones
+ * Programación Orientada a Objetos
+ * 2020-2
+ *Grupo: 2
+ Profesor: M.I Edgar Tista Garcia
+ @author Callejas Sanchez Juan Antonio, Duràn Gonzàlez Lizeth, Mancilla Flores Juan Antonio
+ @version 1.0
+ */
+
+====Manual de usuario===
+
+
+Instrucción de Compilacion
+javac Main.java
+
+Instrucción de Ejeución
+java Main
+
+===============================
+1. Registrar nuevo cliente
+  Ingresar nombre del cliente e email
+  (No debe haber espacios entre cada palabra)
+  
+2. Reservar habitación
+  Ingresar el numero del folio del cliente que hará la reservacion
+  Ingresar cantidad de personas para las que se hará la reservacion de habitación 
+  Ingresar fecha de checkIn en formato dd-mm-aa 
+  Ingresar numero de habitación seleccionada
+  Ingresar fecha de checkOut en formato dd-mm-aa
+ 
+3. Modificar reservación
+  Indicar el cliente que hará la reservación a traves de su número de folio
+  Seleccionar que modificación se quiere hacer
+  De acuerdo a la fecha a modificar,ingresar la fecha en formato dd-mm-aa
+ 
+4. Ver clientes registrados
+5. Ver reservación 
+  Indicar el cliente del que se verá la reservación a traves de su número de folio
+  
+6. Ver habitaciones ocupadas
+  Ingresar fecha en formato dd-mm-aa del dia que se queire saber que habitaciones estan ocupadas
+  
+7. Ver habitaciones disponibles 
+   Ingresar fecha en formato dd-mm-aa del dia que se quiere saber que habitaciones estan disponibles
+   Ingresar numero de personas para el que se busca una habitación disponible. 
