@@ -15,10 +15,16 @@ import java.time.format.*;
 import java.util.*;
 
 
-
+/**
+ * Clase Cliente
+ * Contiene un HashSet de clientes que simula una base de datos de clientes
+ * Crea al objeto cliente
+ * Se encarga de hacer y modificar reservaciones
+ */
 
 
 public class Cliente{
+
     static List <Cliente> BD_Clientes = new LinkedList<>();
     static int noCliente = 200; 
 
