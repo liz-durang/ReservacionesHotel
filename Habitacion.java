@@ -4,7 +4,7 @@
  * 2020-2
  *Grupo: 2
  Profesor: M.I Edgar Tista Garcia
- @author Callejas Sanchez Juan Antonio, Duràn Gonzàlez Lizethm Juan Antonio
+ @author Callejas Sanchez Juan Antonio, Duràn Gonzàlez Lizeth, Mancilla Flores Juan Antonio
  @version 1.0
  */
 
@@ -31,47 +31,85 @@ public class Habitacion {
         agenda = new TreeMap<>();
     }
     
-    /*
+     /*
     *Getters y Setters
     */
+
+    /** 
+     * @return int
+     */
+   
     public int getNoHabitacion() {
         return noHabitacion;
     }
 
+    
+    /** 
+     * @param noHabitacion
+     */
     public void setNoHabitacion( int noHabitacion) {
         this.noHabitacion = noHabitacion;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getPrecio() {
         return precio;
     }
 
+    
+    /** 
+     * @param precio
+     */
     public void setPrecio(int precio) {
         this.precio = precio;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getCupo() {
         return cupo;
     }
 
+    
+    /** 
+     * @param cupo
+     */
     public void setCupo( int cupo) {
         this.cupo = cupo;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getDetalles() {
         return detalles;
     }
 
+    
+    /** 
+     * @param detalles
+     */
     public void setDetalles( String detalles) {
         this.detalles = detalles;
     }
 
     public void getAgenda() {
-         for (Map.Entry <LocalDate, Cliente> elemento: this.agenda.entrySet()) {
+         for (Map.Entry <LocalDate, Cliente> elemento: agenda.entrySet()) {
              System.out.println(elemento.getKey()+"-"+elemento.getValue().getNombre());
-         };
+         }
     }
 
+    
+    /** 
+     * @param fecha
+     * @param cliente1
+     */
     public void setAgenda( LocalDate fecha, Cliente cliente1) {
         this.agenda.put(fecha, cliente1);
     }
@@ -83,53 +121,70 @@ public class Habitacion {
     @Override
     public String toString() {
 
-        return "=====================================\nHabitacion " 
+        return "Habitacion " 
         + this.noHabitacion + "\n$"+this.precio + " " +this.cupo + " personas " + this.detalles+
-        "\n=====================================";
+        "\n";
     }
 
+    /**
+     * Método que carga habitaciones y las ingresa a la base de datos de habitaciones
+     */
    public static void cargarHabitaciones() {
         String info = "\n*Cama KingSize *40m² *Balcón *Wifi gratis *Room Service";
-        Habitacion _101 = new Habitacion(101, 3700, 2, info);
+        Habitacion _101 = new Habitacion(101, 3000, 1, info);
         BD_habitaciones.add (_101);
         
-        info = "\n*Dos camas dobles *30m² *MiniBar *Wifi gratis *Aire Acondicionado";
-        Habitacion _102 = new Habitacion(102, 3500, 4, info);
+        info = "\n*Dos camas individuales *30m² *MiniBar *Wifi gratis *Aire Acondicionado";
+        Habitacion _102 = new Habitacion(102, 3300, 2, info);
         BD_habitaciones.add (_102);
        
-        info = "\n*Cama QueenSize *40m² *Vista al mar *Room Service *Aire Acondicionado";
-        Habitacion _103 = new Habitacion(103, 4100, 2, info);
+        info = "\n*Una cama QueenSize y dos camas individuales  *40m² *Vista al mar *Room Service *Aire Acondicionado";
+        Habitacion _103 = new Habitacion(103, 4100, 3, info);
         BD_habitaciones.add (_103);
 
         info = "\n*Dos camas dobles *44m² *Minibar *Ubicación Preferencial *Balcón";
         Habitacion _104 = new Habitacion(104, 4500, 4, info);
         BD_habitaciones.add (_104);
         
-        info = "\n*Dos camas dobles *47m² *cafetera *Wifi gratis *Room Service";
-        Habitacion _105 = new Habitacion(105, 6600, 4, info);
+        info = "\n*Tres camas dobles *47m² *cafetera *Wifi gratis *Room Service";
+        Habitacion _105 = new Habitacion(105, 7600, 5, info);
         BD_habitaciones.add (_105);
         
         info = "\n*Tres camas dobles *70m² *Terraza privada *Kitchenette *Vista al mar";
         Habitacion _106 = new Habitacion(106, 8500, 6, info);
         BD_habitaciones.add (_106);
-        
+        /*
         info = "\n*Tres camas dobles *60m² *Terraza privada *Minibar *Vista al mar";
         Habitacion _107 = new Habitacion(107, 7500, 6, info);
         BD_habitaciones.add (_107);
        
-        info = "\n*Cama doble *35m² *Bañera *Ventilador *Vista al jardín";
-        Habitacion _108 = new Habitacion(108, 4500, 2, info);
+        info = "\n*Tres camas KingSize *35m² *Bañera *Ventilador *Vista al jardín";
+        Habitacion _108 = new Habitacion(108, 7700, 5, info);
         BD_habitaciones.add (_108);
 
-        info = "\n*Cama KingSize *35m² *Room Service *TV pantalla plana *Balcón";
-        Habitacion _109 = new Habitacion(109, 4300, 2, info);
+        info = "\n*Dos camas KingSize *35m² *Room Service *TV pantalla plana *Balcón";
+        Habitacion _109 = new Habitacion(109, 4300, 4, info);
         BD_habitaciones.add (_109);
 
-        info = "\n*Tres camas doble *55m² *Caja fuerte *Bañera *Vista al jardín";
-        Habitacion _110 = new Habitacion(110, 6700, 6, info);
+        info = "\n*Tres camas dobles *55m² *Caja fuerte *Bañera *Vista al jardín";
+        Habitacion _110 = new Habitacion(110, 6700, 3, info);
         BD_habitaciones.add (_110);
+
+        info = "\n*Cama KingSize *35m² *Jacuzzi *Bañera *Vista al mar";
+        Habitacion _111 = new Habitacion(110, 5700, 2, info);
+        BD_habitaciones.add (_111);
+
+        info = "\n*Cama individual *25m² *Wifi gratis *Tv HD *Vista al mar";
+        Habitacion _112 = new Habitacion(110, 2700, 1, info);
+        BD_habitaciones.add (_112);*/
    }
 
+   
+   /** 
+    * Recorre la base de datos de habitaciones 
+    * Imprime las habitaciones no ocupadas en cierta fecha ingresada
+    * @param fecha
+    */
    public static void verHabitacionesOcupadas (String fecha) {
        
         DateTimeFormatter isoFecha = DateTimeFormatter.ofPattern("dd-MM-yy");
@@ -150,15 +205,23 @@ public class Habitacion {
 
    }
 
-   public static void verHabitacionesDisponibles(String fecha) {
+   
+   /** 
+    * Recorre la base de datos habitaciones 
+    * Imprimee aquellas habitaciones con cierto cupo en especifico
+    * Y que no esten ocupadas en cierta fecha
+    * @param fecha
+    * @param noHuespedes
+    */
+    
+   public static void verHabitacionesDisponibles(String fecha, int noHuespedes) {
        DateTimeFormatter isoFecha = DateTimeFormatter.ofPattern("dd-MM-yy");
         
         LocalDate date = LocalDate.parse(fecha, isoFecha);
         int i = 0;
         System.out.println("\n");
         for (Habitacion habitacion : BD_habitaciones) {
-            if (!habitacion.agenda.containsKey(date)) {
-                System.out.println("HABITACION DISPONIBLE");
+            if (!habitacion.agenda.containsKey(date) && (noHuespedes == habitacion.getCupo()) ) {
                 System.out.println(habitacion);
                 i++;
             }
@@ -166,59 +229,6 @@ public class Habitacion {
         if (i< 1) {
             System.out.println("\n\tNo hay habitaciones disponibles"); 
         }
-
-
    }
-
-
-   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-
-    DateTimeFormatter isoFecha = DateTimeFormatter.ofPattern("dd-MM-yy");
-        
-    Habitacion.cargarHabitaciones();
-
-    Cliente cl1 = new Cliente ("Liz", "liz@");
-    Cliente cl2 = new Cliente ("Ciego", "diego@");
-    Cliente cl3 = new Cliente ("Car", "car@");
-
-
-
-    for (int i = 0; i < 1; i++) {
-        
-        System.out.print("Fecha: ");
-        String fecha = sc.next();
-        LocalDate date = LocalDate.parse(fecha, isoFecha);
-
-        Habitacion.BD_habitaciones.get(0).setAgenda(date, cl1);
-        Habitacion.BD_habitaciones.get(1).setAgenda(date, cl2);
-        Habitacion.BD_habitaciones.get(2).setAgenda(date, cl3);
-
-        LocalDate date1= date.plusDays(2);
-        System.out.println(date.plusDays(2));
-        Habitacion.BD_habitaciones.get(3).setAgenda(date1, cl1);
-        System.out.println("ver");
-        Habitacion.verHabitacionesOcupadas(fecha);
-        Habitacion.verHabitacionesDisponibles(fecha);
-
-    }
-    
-  
-    
-    
-
-    //Habitacion.verHabitacionesOcupadas(fecha);
-
-
-
-
-    
-
-   }
-  
-
 }
-
   
-
-    
