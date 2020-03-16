@@ -11,7 +11,11 @@
 
 import java.util.*;
 
-
+/**
+*Clase principal
+*Se implementan los métodos de la clase Cliente y clase Habitacion
+*Para simular la administración de un hotel 
+*/
 public class Main {
 
     public static void mostrarMenu() {
