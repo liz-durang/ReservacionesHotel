@@ -1,24 +1,19 @@
+
 /**
  * Proyecto 1: Colecciones
  * Programación Orientada a Objetos
  * 2020-2
  *Grupo: 2
  Profesor: M.I Edgar Tista Garcia
- @author Callejas Sanchez Juan Antonio, Duràn Gonzàlez Lizeth, Mancilla Flores Juan Antonio
+ @author Callejas Sanchez Juan Antonio, Duràn Gonzàlez Lizethm Juan Antonio
  @version 1.0
  */
+package Proyecto1POO;
 
 import java.util.*;
 import java.time.*;
 import java.time.format.*;
 
-/**
- * Clase habitacion
- * Contiene un ArrayList de habitaciones, simulando una base de datos de habitaciones
- * El objeto habitacion será con el que se asocie un cliente cuando se haga una reservación
- * Cada habitacion contiene una agenda 'treeMap' en la que se llevara el registro de fechas ocupadas o disponibles
- * 
- */
 public class Habitacion {
 
     static ArrayList <Habitacion> BD_habitaciones = new ArrayList<>(10);
@@ -30,7 +25,7 @@ public class Habitacion {
 
     TreeMap <LocalDate, Cliente> agenda;
 
-    public Habitacion( int noHabitacion,  int precio,  int cupo,  String detalles) {
+    public Habitacion(final int noHabitacion, final int precio, final int cupo, final String detalles) {
         this.noHabitacion = noHabitacion;
         this.precio = precio;
         this.cupo = cupo;
@@ -38,11 +33,12 @@ public class Habitacion {
         agenda = new TreeMap<>();
     }
     
-    /*
+     /*
     *Getters y Setters
     */
 
     /** 
+     * Leer numero de habitación.
      * @return int
      */
    
@@ -52,6 +48,7 @@ public class Habitacion {
 
     
     /** 
+     * Ingresa número de habitación.
      * @param noHabitacion
      */
     public void setNoHabitacion( int noHabitacion) {
@@ -60,6 +57,7 @@ public class Habitacion {
 
     
     /** 
+     * Leer precio de la habitación.
      * @return int
      */
     public int getPrecio() {
@@ -68,6 +66,7 @@ public class Habitacion {
 
     
     /** 
+     * Ingresa precio de la habitación.
      * @param precio
      */
     public void setPrecio(int precio) {
@@ -76,6 +75,7 @@ public class Habitacion {
 
     
     /** 
+     * Leer cupo de la habitación.
      * @return int
      */
     public int getCupo() {
@@ -84,6 +84,7 @@ public class Habitacion {
 
     
     /** 
+     * Ingresa cupo de la habitación.
      * @param cupo
      */
     public void setCupo( int cupo) {
@@ -92,6 +93,7 @@ public class Habitacion {
 
     
     /** 
+     * Leer detalles de la habitación.
      * @return String
      */
     public String getDetalles() {
@@ -100,11 +102,17 @@ public class Habitacion {
 
     
     /** 
+     * Ingresar detalles de la habitación.
      * @param detalles
      */
     public void setDetalles( String detalles) {
         this.detalles = detalles;
     }
+
+    /**
+     * Leer datos de la agenda.
+     * Fecha de Check In - Nombre del cliente
+    */
 
     public void getAgenda() {
          for (Map.Entry <LocalDate, Cliente> elemento: agenda.entrySet()) {
@@ -114,6 +122,7 @@ public class Habitacion {
 
     
     /** 
+     * Ingresar datos a la agenda
      * @param fecha
      * @param cliente1
      */
@@ -215,8 +224,8 @@ public class Habitacion {
    
    /** 
     * Recorre la base de datos habitaciones 
-    * Imprime aquellas habitaciones con el cupo ingresado
-    * Y que no esten ocupadas en cierta fecha ingresada
+    * Imprimee aquellas habitaciones con cierto cupo en especifico
+    * Y que no esten ocupadas en cierta fecha
     * @param fecha
     * @param noHuespedes
     */
@@ -234,8 +243,9 @@ public class Habitacion {
             }
         }
         if (i< 1) {
-            System.out.println("\n\tNo hay habitaciones disponibles"); 
+            System.out.println("\n\tNo hay habitaciones disponibles");
+            return;
         }
    }
 }
-  
+    
