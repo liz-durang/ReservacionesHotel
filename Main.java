@@ -4,19 +4,17 @@
  * 2020-2
  *Grupo: 2
  Profesor: M.I Edgar Tista Garcia
- @author Callejas Sanchez Juan Antonio, Duràn Gonzàlez Lizeth, Mancilla Flores Juan Antonio 
+ @author Callejas Sanchez Juan Antonio, Duràn Gonzàlez Lizethm Juan Antonio
  @version 1.0
  */
+package Proyecto1POO;
 
+ import java.util.Scanner;
+import java.util.Map;
+import java.util.HashMap;
 
-import java.util.*;
-
-/**
-*Clase principal
-*Se implementan los métodos de la clase Cliente y clase Habitacion
-*Para simular la administración de un hotel 
-*/
 public class Main {
+
 
     public static void mostrarMenu() {
         
@@ -51,7 +49,7 @@ public class Main {
         
         Cliente juan = new Cliente("Juan", "juan@gmail.com");
         Cliente.BD_Clientes.add(juan);
-        Cliente juanA = new Cliente("JuanAntonio", "Ant@gmail.com");
+        Cliente juanA = new Cliente("Juan Antonio", "Ant@gmail.com");
         Cliente.BD_Clientes.add(juanA);
         Cliente lia = new Cliente("Lia", "lia@gmail.com");
         Cliente.BD_Clientes.add(lia);
@@ -80,9 +78,10 @@ public class Main {
                     break;
 
                 case 2:
-                   
+                    
                     System.out.println("\n\t==Reservar habitación==");
                     System.out.println("\n¿Que número de folio de cliente hara la reservación?\n");
+                    
                     for (Cliente cliente : Cliente.BD_Clientes ) {
                         System.out.println("\t*" + cliente.getId()+" " + cliente.getNombre());
                     }
@@ -108,9 +107,8 @@ public class Main {
                     for (Cliente cliente : Cliente.BD_Clientes) {
                         if (nocliente2 == cliente.getId()){
                             cliente.modificarReservacion(BD_reservaciones);
-                            
+                            break;
                         }
-                        break;
                         
                     }
                     break;
@@ -130,16 +128,14 @@ public class Main {
                     int nocliente3 = sc.nextInt();
                     for (Cliente cliente : Cliente.BD_Clientes) {
                         if (nocliente3 == cliente.getId()){
-                            if (BD_reservaciones.containsValue(cliente)) {
+                            if (BD_reservaciones.containsValue(cliente)) 
                                 cliente.verReservacion(BD_reservaciones);
-                            }
-                            else{
-                                System.out.println("El cliente no tiene niguna reservación");
-                            }
                             
-                        }
+                            else
+                                System.out.println("El cliente no tiene niguna reservación");
+                            
                         break;
-                        
+                        }
                     }
                     
                     break;
